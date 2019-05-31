@@ -24,4 +24,11 @@ func main() {
 	c := int(a) + b
 
 	fmt.Println("C has value:", c, "and is of type", reflect.TypeOf(c))
+
+	pointerName := "Mike"
+	ptr := &pointerName
+
+	fmt.Println("Name is", pointerName, "and is of type", reflect.TypeOf(pointerName))
+	fmt.Println("Memory address of name is", ptr)
+	fmt.Println("Value of pointer variable is", *ptr)
 }
