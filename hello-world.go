@@ -1,34 +1,26 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
+import "fmt"
 
-/*
-  var (
-	name, course string  // name of subscriber
-	module       float64 // step in course
-)
-*/
-
-var name, course, module = "Mike", "Learn Go", 2.6
+const userID = 12345
 
 func main() {
-	fmt.Println("Name is set to", name, "and is of type", reflect.TypeOf(name))
-	fmt.Println("Module is set to", module, "and is of type", reflect.TypeOf(module))
 
-	a := 10.00000
-	b := 3
+	name := "Mike"
+	course := "Learn Go"
 
-	c := int(a) + b
+	fmt.Println("Hi", name, "you're currently watching", course)
 
-	fmt.Println("C has value:", c, "and is of type", reflect.TypeOf(c))
+	changeCourse(&course)
 
-	pointerName := "Mike"
-	ptr := &pointerName
+	fmt.Println("You are now watching", course)
+}
 
-	fmt.Println("Name is", pointerName, "and is of type", reflect.TypeOf(pointerName))
-	fmt.Println("Memory address of name is", ptr)
-	fmt.Println("Value of pointer variable is", *ptr)
+func changeCourse(course *string) string {
+
+	*course = "Docker for Numpties"
+
+	fmt.Println("Updating your current course to", *course)
+
+	return *course
 }
