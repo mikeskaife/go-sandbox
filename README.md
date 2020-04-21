@@ -1,3 +1,3 @@
 # go-sandbox
 
-Sandbox for learning Go
+Sandbox for Go development
